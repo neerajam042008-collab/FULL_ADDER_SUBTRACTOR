@@ -37,19 +37,37 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+<img width="695" height="398" alt="image" src="https://github.com/user-attachments/assets/0edeffa7-b7f2-4d6a-988e-93943e06d6c4" />
+
 
 **Procedure**
 
-Write the detailed procedure here
+ 1.Create a new project in Quartus II and open a Block Diagram/Schematic file.
+ 2.Place logic symbols and connect inputs A, B, Cin and outputs Sum, Cout.
+ 3.Implement logic: Sum = A ⊕ B ⊕ Cin, Cout = AB + Cin(A ⊕ B).
+ 4.Compile and simulate to verify the output waveform.
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by:NEERAJA MADASAMY
+RegisterNumber:212225240099
+module full(a,b,c,x,y,z,sum,dif,car,bor);
+input a,b,c,x,y,z;
+output sum,dif,car,bor;
+assign sum = a^b^c;
+assign car = a&b | a&c | b&c;
+assign dif = x^y^z;
+assign bor = ~x&z | ~x&y | y&z;
+endmodule
 */
 
 **RTL Schematic**
+<img width="1920" height="1080" alt="Screenshot 2026-03-10 194914" src="https://github.com/user-attachments/assets/baa2c588-2a5b-43bb-a1b9-b197b49c8487" />
+
 
 **Output Timing Waveform**
+<img width="1920" height="1080" alt="Screenshot 2026-03-10 195836" src="https://github.com/user-attachments/assets/fe22e936-7758-4cf2-bd46-d372cac9aaf4" />
+
 
 **Result:**
 
